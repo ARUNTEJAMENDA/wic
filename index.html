@@ -1,0 +1,289 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>WIC</title>
+	<meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+</head>
+
+<body id="body">
+    <nav>
+        <h1><abbr title="--| Within Campus |--">WIC<sup style="font-size: 39px;font-family:Verdana, Geneva, Tahoma, sans-serif;">™</sup></abbr></h1>
+        <table>
+            <tr>
+                <th>Contact</th>
+                <th id="th1">About</th>
+                <th id="th2">Support</th>
+            </tr>
+        </table>
+    </nav>
+
+    <section id="main">
+        <div id="left">
+            <p id="wic_v" style="pointer-events: none;"><sup id="sup1">™</sup>WIC</p>
+            <p id="desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, fugiat eius. Excepturi molestias vero, amet magni blanditiis, odio nemo sint repellat et sunt quibusdam unde voluptatem inventore, possimus repudiandae placeat?
+            </p>
+            <div id="arrow"></div>
+            <div id="arrow_r"></div>
+        </div>
+        <div id="right">
+            <div id="log_reg">
+                <div id="log">
+                    <div id="h1">
+                        <h1>Login</h1>
+                    </div>
+                    <div id="b1">
+                        <input type="text" placeholder="UID" />
+                        <div id="p">
+                            <input id="p_in" type="password" placeholder="PASS" />
+                            <div id="hide">
+                                ⊛
+                            </div>
+                        </div>
+                    </div>
+                    <div id="f1">
+                        <button id="LogB">Login</button>
+                        <div style="margin:0;padding:0;;width:0;height:80%;border-left:2px solid black;"></div>
+                        <button id="RegB">Register</button>
+                    </div>
+                </div>
+                <div id="reg" style="display:none;">
+                    <div id="h2">
+                        <h1>Register</h1>
+                    </div>
+                    <div id="b2">
+                        <input type="text" placeholder="UID" />
+                        <div id="r_p">
+                            <input id="r_p_in" type="password" placeholder="PASS" />
+                            <div id="r_hide">
+                                ⊛
+                            </div>
+                        </div>
+                    </div>
+                    <div id="f2">
+                        <button id="r_LogB">Login</button>
+                        <div style="margin:0;padding:0;;width:0;height:80%;border-left:2px solid black;"></div>
+                        <button id="r_RegB">Register</button>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <hr>
+    <section id="footer">
+        <a id="up" href="#body">
+            <div id="up_d">
+                ⇧
+                <!-- ▲ -->
+                <!-- ◭ -->
+                <!-- △ -->
+            </div>
+        </a>
+    </section>
+    <hr style="margin: 2px 1px 1px 1px ;">
+    <span id="info">
+        Copywrites Owned By ©WIC_WithinCampus™
+    </span>
+    <hr style="margin: 6px 1px 1px 1px ;">
+    <hr style="height:1px;background:none;margin-top:0;padding:0;">
+    <script>
+        $(document).ready(function() {
+            if (screen.width > 600) {
+                /*-----------------------------------------------------*/
+                $("#up").on('click', function(event) {
+                    if (this.hash !== "") {
+                        event.preventDefault();
+                        var hash = this.hash;
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 600, function() {
+                            window.location.hash = hash;
+                        });
+                    }
+                });
+                /*-----------------------------------------------------*/
+                var scrollPos = 0;
+                window.addEventListener('scroll', function() {
+                    if ((document.body.getBoundingClientRect()).top > scrollPos) {
+                        document.getElementById('arrow_r').click();
+                        $("nav").css("height", "14vh");
+                    } else {
+                        $("nav").css("height", "15vh");
+                        document.getElementById('arrow').click();
+                    }
+                    scrollPos = (document.body.getBoundingClientRect()).top;
+                });
+                /*---------------------PASSWORD----------------------*/
+                $("#hide").click(function() {
+                    if (document.getElementById("p_in").type == "password") {
+                        // alert("type is pass");
+                        document.getElementById("p_in").type = "text";
+                    } else {
+                        // alert("type is text");
+                        document.getElementById("p_in").type = "password";
+                    }
+                });
+                $("#r_hide").click(function() {
+                    if (document.getElementById("r_p_in").type == "password") {
+                        // alert("type is pass");
+                        document.getElementById("r_p_in").type = "text";
+                    } else {
+                        // alert("type is text");
+                        document.getElementById("r_p_in").type = "password";
+                    }
+                });
+                /*------------------------------------------------------*/
+                $("#arrow").click(function() {
+                    $('#left').css("backdrop-filter", 'blur(0.7px)');
+                    //
+                    $('#left').css("width", '65vw');
+                    $('#right').css("width", '35vw');
+                    //
+                    $('#arrow').css("display", "none");
+                    $('#arrow_r').css("display", "block");
+                    //
+                    $('#wic_v').css("display", "none");
+                    $('#desc').css("display", "unset");
+                    $('#desc').css("width", "93%");
+                    $('#arrow_r').css("width", "6%");
+                    $('#left').css("justify-content", "space-between");
+                    //
+                    $('#log').css("display", "none");
+                    $('#reg').css("display", "unset");
+                    $('#f2').css("flex-direction", "row-reverse");
+                    //
+                    $('#reg #RegB').css("background", "rgba(255, 135, 195, 0.753)");
+                    // $('#reg #RegB').css("box-shadow", "0px 0px 10px 2px rgb(78, 199, 255) inset");
+                    $('#reg #RegB').css("width", "45%");
+                    $('#reg #LogB').css("width", "25%");
+
+                });
+                $("#arrow_r").click(function() {
+                    $('#left').css("backdrop-filter", '');
+                    //
+                    $('#left').css("background", 'unset');
+                    $('#blur').css("display", 'unset');
+                    //
+                    $('#left').css("width", '24vw');
+                    $('#right').css("width", '76vw');
+                    //
+                    $('#arrow_r').css("display", "none");
+                    $('#arrow').css("display", "block");
+                    //
+                    $('#wic_v').css("display", "unset");
+                    $('#desc').css("display", "none");
+                    //
+                    $('#reg').css("display", "none");
+                    $('#log').css("display", "unset");
+                    //
+                });
+
+                $('#f2 #r_LogB').click(function() {
+                    $('#left').css("backdrop-filter", '');
+                    //
+                    $('#left').css("background", 'unset');
+                    $('#blur').css("display", 'unset');
+                    //
+                    $('#left').css("width", '24vw');
+                    $('#right').css("width", '76vw');
+                    //
+                    $('#arrow_r').css("display", "none");
+                    $('#arrow').css("display", "block");
+                    //
+                    $('#wic_v').css("display", "unset");
+                    $('#desc').css("display", "none");
+                    //
+                    $('#reg').css("display", "none");
+                    $('#log').css("display", "unset");
+                });
+                $('#f1 #RegB').click(function() {
+                    $('#left').css("backdrop-filter", 'blur(0.7px)');
+                    //
+                    $('#left').css("width", '65vw');
+                    $('#right').css("width", '35vw');
+                    //
+                    $('#arrow').css("display", "none");
+                    $('#arrow_r').css("display", "block");
+                    //
+                    $('#wic_v').css("display", "none");
+                    $('#desc').css("display", "unset");
+                    $('#desc').css("width", "93%");
+                    $('#arrow_r').css("width", "6%");
+                    $('#left').css("justify-content", "space-between");
+                    //
+                    $('#log').css("display", "none");
+                    $('#reg').css("display", "unset");
+                    $('#f2').css("flex-direction", "row-reverse");
+                    //
+                    $('#reg #RegB').css("background", "rgba(255, 135, 195, 0.753)");
+                    // $('#reg #RegB').css("box-shadow", "0px 0px 10px 2px rgb(78, 199, 255) inset");
+                    $('#reg #RegB').css("width", "45%");
+                    $('#reg #LogB').css("width", "25%");
+                });
+                // -----------------------------------------------------------------------
+                $("#LogB").click(function() {
+                    alert("Logged In.");
+                });
+                $("#r_RegB").click(function() {
+                    alert("Registered.");
+                });
+                // -----------------------------------------------------------------------
+            } else {
+                alert("Use Landscape-Mode For Best Experience..!!");
+                // -----------------------------------------------------------------------
+                $("#up").on('click', function(event) {
+                    if (this.hash !== "") {
+                        event.preventDefault();
+                        var hash = this.hash;
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 600, function() {
+                            window.location.hash = hash;
+                        });
+                    }
+                });
+
+                // -----------------------------------------------------------------------
+                $('#f2 #r_LogB').click(function() {
+                    $('#reg').css("display", "none");
+                    $('#log').css("display", "unset");
+                });
+                $('#f1 #RegB').click(function() {
+                    $('#log').css("display", "none");
+                    $('#reg').css("display", "unset");
+                    $('#f2').css("flex-direction", "row-reverse");
+                    //
+                    $('#reg #RegB').css("background", "rgba(255, 135, 195, 0.753)");
+                    $('#reg #RegB').css("width", "45%");
+                    $('#reg #LogB').css("width", "25%");
+                });
+                /*---------------------PASSWORD----------------------*/
+                $("#hide").click(function() {
+                    if (document.getElementById("p_in").type == "password") {
+                        // alert("type is pass");
+                        document.getElementById("p_in").type = "text";
+                    } else {
+                        // alert("type is text");
+                        document.getElementById("p_in").type = "password";
+                    }
+                });
+                $("#r_hide").click(function() {
+                    if (document.getElementById("r_p_in").type == "password") {
+                        // alert("type is pass");
+                        document.getElementById("r_p_in").type = "text";
+                    } else {
+                        // alert("type is text");
+                        document.getElementById("r_p_in").type = "password";
+                    }
+                });
+                /*------------------------------------------------------*/
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Profile Dashboard</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="profile.css" />
+</head>
+
+<body id="body">
+    <section id="sidenav">
+        <div id="one">
+            <span id="company">WIC™</span>
+            <div id="navigation">
+                ▶
+            </div>
+        </div>
+
+    </section>
+    <section id="main">
+        <section id="profile">
+            <div id="user">
+                <div id="u_pic">
+                    <img src="img/p2.jpg" height="200px" width="200px" alt="User_Image" />
+                </div>
+                <div id="u_info">
+                    <input id="u_name" type="text" name="user" placeholder="Name" value="PECHETTI JAI SAI THARUN" />
+                    <div id="u_d_e">
+                        <textarea id="u_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum repellat animi vero at ex saepe eum necessitatibus obcaecati atque explicabo eos accusamus porro sit facere, veritatis aspernatur quis voluptates eaque?</textarea>
+                        <div id="u_e">
+                            <div id="u_edit">↸</div>
+                            <div id="u_save">Save</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="activity">
+                <div id="orders" onmouseover="document.getElementById('marquee').start();" onmouseout="document.getElementById('marquee').stop();">
+                    <img id="cart" src="img/p3.png" alt="Cart">
+                    <marquee id="marquee" behaviour="scroll" scrollamount="12">
+                        <img id="ground" src="img/ground.png" alt="ground">
+                        <img id="ground" src="img/ground.png" alt="ground">
+                        <img id="ground" src="img/ground.png" alt="ground">
+                    </marquee>
+                    <span>My Orders</span>
+                </div>
+            </div>
+        </section>
+        <!-- ------------------------------------------------ -->
+        <hr style="background:transparent;margin-top:1px;margin-bottom:0;width:96vw;border:1px solid rgba(255, 255, 255, 0.603);">
+        <!-- ------------------------------------------------ -->
+        <section id="c">
+            <div id="cat">
+                <span id="h">CATEGORIES<span id="arrow"style="font-size: 40px;margin-left:5px;">⇒</span></span>
+            </div>
+            <div id="categories">
+                <div id="d">FOOD</div>
+                <div id="d">STATIONARY</div>
+                <div id="d">EDUCATION</div>
+                <div id="d">XXXX</div>
+                <div id="d">XXXX</div>
+                <div id="d">XXXX</div>
+            </div>
+        </section>
+    </section>
+    <!-- ------------------------------------------------ -->
+    <script lang="javascript">
+        $(document).ready(function() {
+            /*---------------------------------------*/
+            if (screen.width > 900) {
+                document.getElementById('navigation').textContent = "◀";
+                $("#one").css("justify-content", "space-evenly");
+                $("#company").css("display", "unset");
+                /*-----------SIDE_NAV-----------------*/
+                $('#sidenav').css("width", "20vw");
+                $('#main').css("width", "80vw");
+                /*---------------------------------------*/
+                $("#navigation").click(function() {
+                    if (document.getElementById('navigation').textContent == "◀") {
+                        //
+                        document.getElementById('navigation').textContent = "▶";
+                        //
+                        $("#company").css("display", "none");
+                        //
+                        $('#sidenav').css("border-right", "5px solid wheat");
+
+                        //
+                        $('#sidenav').css("width", "5vw");
+                        $('#main').css("width", "95vw");
+                        /**/
+                        $("#one").css("justify-content", "center");
+                    } else {
+                        $("#one").css("justify-content", "space-evenly");
+                        //
+                        $("#company").css("display", "unset");
+                        $('#sidenav').css("border-right", "5px solid  5px solid rgba(245, 222, 179, 0.589);");
+                        //
+                        $('#sidenav').css("width", "20vw");
+                        $('#main').css("width", "80vw");
+                        //
+                        document.getElementById('navigation').textContent = "◀";
+                    }
+                });
+            } else {
+                //▲▼△▽⇣⇡⇩⇧
+                document.getElementById('navigation').textContent = "↯";
+                $("#one").css("justify-content", "space-evenly");
+                $("#company").css("display", "unset");
+                /*-----------SIDE_NAV-----------------*/
+                $('#sidenav').css("width", "97vw");
+                /*---------------------------------------*/
+                $("#navigation").click(function() {
+                    if (document.getElementById('navigation').textContent == "↯") {
+                        //
+                        document.getElementById('navigation').textContent = "⨂";
+                        //
+                        $('#main').css("display", "none");
+                        //
+                        $('#body').css("background", "grey");
+                        //
+                        $('#body').css("overflow", "hidden");
+                        $('#body').css("height", "100vh");
+                        $("#body").css("justify-content", "center");
+                        //
+                        $('#sidenav').css("height", "99vh");
+                        $('#sidenav').css("width", "97vw");
+                        $('#sidenav').css("transition", "0.5s");
+                        $('#sidenav').css("border-radius", "20px 20px 20px 20px");
+                        //
+                        $("#one").css("justify-content", "center");
+                    } else {
+                        //
+                        $("#company").css("display", "unset");
+                        //
+                        $('#sidenav').css("height", "10vh");
+                        //
+                        $('#main').css("display", "unset");
+                        $('#body').css("overflow", "unset");
+                        $('#body').css("height", "201vh");
+                        $("#body").css("justify-content", "space-between");
+                        //
+                        $('#body').css("background", "rgb(65, 190, 182)");
+                        $('#sidenav').css("border-radius", "0px 0px 18px 18px");
+                        //
+                        document.getElementById('navigation').textContent = "↯";
+                    }
+                });
+            }
+            document.getElementById('marquee').stop();
+            $("#u_edit").click(function() {
+                alert("clicked");
+                $("#u_name").css("pointer-events", "initial");
+                $("#u_desc").css("pointer-events", "initial");
+            });
+            $("#u_save").click(function() {
+                alert("clicked");
+                $("#u_name").css("pointer-events", "none");
+                $("#u_desc").css("pointer-events", "none");
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+</html>

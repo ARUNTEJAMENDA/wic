@@ -1,0 +1,516 @@
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 20px;
+    background: black;
+}
+
+body::-webkit-scrollbar-track {
+    background: red;
+    border-radius: 50%;
+}
+
+body::-webkit-scrollbar-thumb {
+    position: relative;
+    left: 10%;
+    height: 10px;
+    border-radius: 50%;
+    background: black;
+}
+
+nav {
+    position: fixed;
+    height: 15vh;
+    width: 100vw;
+    background: rgba(185, 109, 122, 0.5);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-radius: 0px 0px 20px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.315);
+    z-index: 3;
+    transition: 0.4s;
+}
+
+abbr {
+    text-decoration: none;
+}
+
+nav h1 {
+    margin-top: 1.3%;
+    width: 50%;
+    padding-left: 125px;
+    font-size: 60px;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+table {
+    height: 100%;
+    width: 50%;
+    border-spacing: 0px 30px;
+}
+
+th {
+    margin: 0;
+    font-size: 20px;
+    color: rgb(17, 255, 136);
+    font-weight: bolder;
+}
+
+th:hover {
+    background: rgba(185, 109, 122, 0.216);
+    cursor: pointer;
+}
+
+th {
+    border-left: 2.25px dotted black;
+}
+
+#main {
+    border-radius: 20px;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    background: url("img/h_bd_group.jpg");
+    background-size: 1200px 900px;
+    background-position: -100px -20px;
+    background-repeat: no-repeat;
+}
+
+#left {
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    width: 24vw;
+    height: 100vh;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(4px);
+}
+
+#wic_v {
+    color: yellow;
+    font-weight: bolder;
+    position: absolute;
+    font-size: 120px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+#sup1 {
+    font-size: 45px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    left: 40px;
+    top: 35px;
+}
+
+#desc {
+    display: none;
+    text-align: center;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(255, 251, 251);
+    margin-left: 3%;
+}
+
+#arrow,
+#arrow::before {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    position: relative;
+    left: 99.9%;
+    width: 65px;
+    clip-path: polygon(46% 0%, 75% 50%, 46% 100%, 0% 100%, 0% 0%);
+}
+
+#arrow_r,
+#arrow_r::before {
+    background: rgba(255, 255, 255, 0.767);
+    clip-path: polygon(44% 0, 100% 0%, 100% 100%, 43% 100%, 15% 50%);
+}
+
+#arrow_r {
+    display: none;
+}
+
+#arrow,
+#arrow_r {
+    margin: 0;
+    padding: 0;
+    content: "";
+    height: 50px;
+    border-top: 3px solid red;
+    border-bottom: 3px solid red;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#arrow::before,
+#arrow_r::before {
+    content: "";
+    height: 56px;
+    width: 52px;
+    background-color: red;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+#right {
+    border-radius: 150px 0px 0px 0px;
+    /*  */
+    transition: 0.3s;
+    margin: 0;
+    padding: 0;
+    /*  */
+    background: url("img/needs.jpg");
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*  */
+    width: 76vw;
+    height: 100vh;
+    /*  */
+    box-shadow: 0 0 15px black;
+    clip-path: inset(0px 0px 0px -10px);
+    /*  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* #right::before {
+    content: "";
+    height: 200px;
+    width: 25vw;
+    background-color: rgb(78, 199, 255);
+    position: absolute;
+    bottom: 0;
+    left: 0vw;
+    clip-path: polygon(21% 63%, 34% 56%, 48% 50%, 59% 44%, 71% 36%, 84% 26%, 95% 11%, 100% 0, 100% 100%, 0 100%, 3% 87%, 10% 74%);
+    margin: 0;
+    padding: 0;
+} */
+
+#log_reg {
+    height: 400px;
+    width: 400px;
+    background: rgba(255, 255, 255, 0.829);
+    /* background: rgba(0, 255, 255, 0.363); */
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0px 0px 10px 2px rgb(0, 0, 0) inset;
+    /* box-shadow: 0px 0px 15px rgba(94, 255, 255, 0.877), 0px 0px 10px 2px rgb(78, 199, 255) inset; */
+    /* box-shadow: 0px 0px 15px rgba(194, 241, 241, 0.877); */
+}
+
+#log,
+#reg {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#log #h1,
+#reg #h2 {
+    height: 20%;
+    border: 6px solid rgba(0, 0, 0, 0.644);
+    border-bottom: none;
+    border-radius: 18px 18px 0px 0px;
+    font-size: xx-large;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#log #b1,
+#reg #b2 {
+    height: 56%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#log input,
+#reg input {
+    height: 20%;
+    width: 80%;
+    border-radius: 18px;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+    border: none;
+    /*  */
+    background-color: rgba(245, 245, 245, 0.596);
+    box-shadow: 0px 0px 10px 0px black inset;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#p,
+#r_p {
+    width: 85%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#b1 input:focus,
+#b2 input:focus {
+    outline: none;
+}
+
+#b1 input:focus-within,
+#b2 input:focus-within {
+    background-color: rgba(131, 195, 224, 0.801);
+    color: rgb(117, 0, 98);
+}
+
+#p #p_in,
+#r_p #r_p_in {
+    /* width: 80%; */
+    height: 100%;
+    border-radius: 18px 0px 0px 18px;
+    box-shadow: 0 0 15px black inset;
+    clip-path: inset(0px 10px 0px 0px);
+    display: inline;
+}
+
+#p #hide,
+#r_p #r_hide {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    /*  */
+    height: 100%;
+    width: 20%;
+    border-radius: 0px 18px 18px 0px;
+    background-color: rgba(245, 245, 245, 0.596);
+    /*  */
+    box-shadow: 0 0 15px black inset;
+    clip-path: inset(0px 0px 0px 10px);
+    /*  */
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+    font-weight: bolder;
+    /*  */
+    cursor: pointer;
+    margin: 0px 0px 0px -6%;
+    padding: 0;
+}
+
+#log #f1,
+#reg #f2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 20%;
+    align-items: center;
+}
+
+#log #LogB,
+#reg #r_RegB {
+    background: rgba(255, 135, 195, 0.753);
+    width: 45%;
+}
+
+#log #RegB,
+#reg #r_LogB {
+    width: 25%;
+}
+
+#log button,
+#reg button {
+    letter-spacing: 1px;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 70%;
+    border-radius: 18px;
+    background-color: rgb(78, 199, 255);
+    border: none;
+}
+
+#log button:hover,
+#reg button:hover {
+    background-color: rgb(124, 213, 255);
+    border: 4px solid WHITE;
+}
+
+
+/* ------------------------------------------------ */
+
+hr {
+    height: 3px;
+    border: none;
+    background-color: burlywood;
+}
+
+
+/* ------------------------------------------------ */
+
+#footer {
+    height: 90vh;
+    width: 100vw;
+    background: url("img/5.jpg");
+    background-position: 0px -1240px;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+}
+
+#up {
+    text-decoration: none;
+    /*  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*  */
+    font-size: x-large;
+    font-weight: bolder;
+    /*  */
+    position: fixed;
+    right: 4%;
+    bottom: 4%;
+    /*  */
+    height: 3vw;
+    width: 3vw;
+    /*  */
+    margin: 0;
+    padding: 0;
+    /*  */
+    background: linear-gradient(to right, red, orange);
+    color: white;
+    /*  */
+    border-radius: 30px;
+    border: none;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+    /*  */
+    cursor: pointer;
+    /*  */
+    transition: 10ms;
+}
+
+#up:hover {
+    border-top: none;
+    border-left: none;
+    border-right: 5px solid black;
+    border-bottom: 5px solid black;
+}
+
+#up:active {
+    color: black;
+}
+
+#info {
+    height: 2vh;
+    width: 100vw;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    color: rgb(92, 65, 29);
+}
+
+@media screen and (max-width:600px) {
+    nav h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        padding: 0;
+        margin: 0;
+    }
+    #main {
+        height: 150vh;
+        padding-top: 15vh;
+        flex-direction: column;
+        background-size: cover;
+        background-position: 55% -100px;
+    }
+    #left h1 {
+        color: white;
+    }
+    #left {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        backdrop-filter: none;
+    }
+    #arrow,
+    #arrow_r {
+        display: none;
+    }
+    #right {
+        height: 100vh;
+        width: 100vw;
+        background-position: center;
+        background-size: cover;
+    }
+    #log_reg {
+        height: 70vw;
+        width: 70vw;
+    }
+    #footer {
+        height: 80vh;
+        width: 100vw;
+        background: url("img/3.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+    #footer #up {
+        height: 10vw;
+        width: 10vw;
+    }
+    #wic_v {
+        all: initial;
+        font-size: 35px;
+        font-weight: bolder;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    #wic_v #sup1 {
+        font-size: 25px;
+        position: relative;
+        top: 0;
+        left: 96%;
+    }
+    #desc {
+        display: unset;
+    }
+    #log #RegB {
+        width: 35%;
+    }
+    #p #hide,
+    #r_p #r_hide {
+        margin: 0px 0px 0px -8.9%
+    }
+}
